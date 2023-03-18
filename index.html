@@ -21,12 +21,21 @@
     </header>
 
     <div class="showcases-container">
-      <!-- <template id="project-item"> -->
+      <template id="project-item">
       <div class="project-showcase">
-        <img src="https://picsum.photos/402/270" alt="" class="project-image" />
+        <a href="" class="project-link" target="_blank">
+          <img
+            src="https://picsum.photos/402/270"
+            alt=""
+            class="project-image" />
+        </a>
 
         <div class="project-info">
-          <h2 class="project-title">Un trabajo que hice</h2>
+          <a href="" class="project-link" target="_blank">
+            <h2 class="project-title">Un trabajo que hice</h2>
+          </a>
+          
+          <input type="checkbox" class="show-more-state" id="show-more" ></input>
 
           <p class="project-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
@@ -35,10 +44,12 @@
             delectus mollitia nulla voluptatum sed ullam.
           </p>
 
-          <a href="" class="project-link">Ver más</a>
+          <label for="show-more" class="show-more-trigger" >
+            
+          </label>
         </div>
       </div>
-      <!-- </template> -->
+      </template>
     </div>
   </body>
 </html>

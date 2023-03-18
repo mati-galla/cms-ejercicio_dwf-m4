@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: white;
+  background-color: #f5f5f5e5;
 }
 
 header {
@@ -30,19 +30,33 @@ header p {
 }
 
 .showcases-container {
-  width: 485px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   padding: 45px 40px 90px 40px;
 }
 
+@media only screen and (min-width: 960px) {
+  .showcases-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 .project-showcase {
-  height: 460px;
+  margin: auto;
+  width: 485px;
+  min-height: 460px;
   margin-top: 40px;
   border: 2px solid black;
   border-radius: 4px;
   background-color: black;
+}
+
+@media only screen and (min-width: 960px) {
+  .project-showcase {
+    width: 370px;
+    min-height: 479px;
+  }
 }
 
 .project-image {
@@ -63,6 +77,15 @@ header p {
 
 .project-title {
   font-weight: 500;
+  color: blueviolet;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-link {
+  text-decoration: none;
 }
 
 .project-description {
@@ -76,14 +99,30 @@ header p {
   -webkit-box-orient: vertical;
 }
 
-.project-link {
-  display: block;
-  text-align: right;
+.show-more-state {
+  display: none;
 }
 
-.project-link:link,
-.project-link:hover,
-.project-link:active,
-.project-link:visited {
+.show-more-trigger {
+  cursor: pointer;
   color: gold;
+  display: block;
+  text-align: right;
+  text-decoration: underline;
+}
+
+.show-more-state:checked ~ .project-description {
+  overflow: visible;
+  text-overflow: initial;
+  display: initial;
+  -webkit-line-clamp: none;
+  line-clamp: none;
+  -webkit-box-orient: initial;
+}
+.show-more-state ~ .show-more-trigger:before {
+  content: "Ver más";
+}
+
+.show-more-state:checked ~ .show-more-trigger:before {
+  content: "Ver menos";
 }
